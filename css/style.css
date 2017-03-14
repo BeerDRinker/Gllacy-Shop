@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*=================================
         NORMALIZE CSS 5.0
 ==================================*/
@@ -408,7 +409,7 @@ body {
 .main-search-contacts {
     position: relative;
     float: right;
-    margin-top: 24px;
+    margin-top: 20px;
     font-size: 14px;
     font-weight: 500;
 }
@@ -459,7 +460,7 @@ body {
 .header-search-modal {
     display: none;
     position: absolute;
-    top: 40px;
+    top: 35px;
     left: -310px;
     width: 342px;
     height: 69px;
@@ -526,7 +527,7 @@ body {
     display: none;
     position: absolute;
     width: 270px;
-    top: 40px;
+    top: 35px;
     left: -140px;
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
     border-radius: 5px;
@@ -637,6 +638,7 @@ body {
 }
 
 .main-checkput-modal {
+    display: none;
     position: absolute;
     top: 35px;
     left: -283px;
@@ -651,79 +653,57 @@ body {
 }
 
 .main-checkput-modal table {
-    position: relative;
-    padding-left: 75px;
-    padding-top: 0px;
-    padding-right: 31px;
+    padding-top: 10px;
     padding-bottom: 15px;
     width: 540px;
 }
 
-.main-checkput-modal table:after {
-    content: '';
-    position: absolute;
-    width: 510px;
-    height: 1px;
-    bottom: 0;
-    left: 15px;
-    background-color: #cacac7;
-}
-
-.main-checkput-modal tr {
-    position: relative;
-}
-
-.main-checkput-modal tr:nth-child(1)::before {
-    content: '';
-    position: absolute;
-    width: 33px;
-    height: 33px;
-    top: 25px;
-    left: 43px;
-    background: url("../img/checkput-modal-bg_01.png") center no-repeat;
-    background-size: cover;
-}
-
-.main-checkput-modal tr:nth-child(2)::before {
-    content: '';
-    position: absolute;
-    width: 33px;
-    height: 33px;
-    top: 25px;
-    left: 43px;
-    background: url("../img/checkput-modal-bg_02.png") center no-repeat;
-    background-size: cover;
-}
-
 .main-checkput-modal td {
     vertical-align: top;
-    position: relative;
-    padding-top: 35px;
+    padding-top: 25px;
 }
 
-.main-checkput-modal td:first-child {
-    width: 225px;
+.main-checkput-modal td button {
+    border: 0;
+    margin-left: 13px;
+    width: 10px;
+    height: 11px;
+    background: url("../img/checkout-remove.png") center center no-repeat;
+    outline: none;
+    cursor: pointer;
 }
 
-.main-checkput-modal td:nth-child(2) {
-    padding-left: 15px;
-    width: 110px;
+.main-checkput-modal td img {
+    margin-left: 2px;
+    margin-top: -10px;
 }
 
 .main-checkput-modal td:nth-child(3) {
-    width: 60px;
+    width: 220px;
+    padding-right: 20px;
 }
 
 .main-checkput-modal p {
+    position: relative;
     text-align: right;
     color: #333333;
     font-size: 15px;
     font-weight: 700;
     padding-right: 26px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
-.main-checkput-modal button {
+.main-checkput-modal p::before {
+    content: '';
+    position: absolute;
+    width: 510px;
+    height: 1px;
+    top: -14px;
+    left: 15px;
+    background-color: #cacac7;
+}
+
+.main-checkput-modal .checkout {
     float: right;
     padding: 7px 20px;
     border-radius: 50px;
@@ -740,6 +720,10 @@ body {
     font-size: 15px;
     font-weight: 700;
     line-height: 24px;
+}
+
+.main-checkput-modal-show {
+    display: block;
 }
 
 .main-shedule {
@@ -1250,6 +1234,128 @@ body {
     border-radius: 25px;
 }
 
+.feedback-modal {
+    display: none;
+    position: fixed;
+    width: 477px;
+    padding-left: 24px;
+    border-radius: 10px 9px 9px 10px;
+    background-color: #f8f7f4;
+    z-index: 30;
+    top: 25%;
+    left: 50%;
+    margin-left: -235px;
+}
+
+.feedback-modal h5 {
+    color: #343434;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 22px;
+    margin: 20px 0;
+}
+
+.feedback-modal .feedback-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 17px;
+    height: 17px;
+    font-size: 0;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.feedback-modal .feedback-modal-close::before {
+    content: '';
+    position: absolute;
+    width: 17px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 1px;
+    transform: rotate(45deg);
+    top: 10px;
+    left: 2px;
+}
+
+.feedback-modal .feedback-modal-close::after {
+    content: '';
+    position: absolute;
+    width: 17px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 1px;
+    transform: rotate(-45deg);
+    top: 10px;
+    left: 2px;
+}
+
+.feedback-modal input {
+    display: block;
+    color: #656565;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-left: 16px;
+    margin-bottom: 20px;
+    width: 267px;
+    height: 44px;
+    border-radius: 5px 4px 4px 5px;
+    border: 1px solid rgba(178, 178, 178, 0.52);
+    background-color: #ffffff;
+}
+
+.feedback-modal textarea {
+    padding-top: 13px;
+    padding-left: 16px;
+    resize: none;
+    border-radius: 5px 4px 4px 5px;
+    border: 1px solid rgba(178, 178, 178, 0.52);
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.feedback-modal input[type="submit"] {
+    border: none;
+    text-align: center;
+    float: right;
+    margin-right: 30px;
+    padding: 12px 18px;
+    box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+    background-color: #ffffff;
+    background-image: linear-gradient(to top, #e74a35 0%, #f26843 100%);
+    opacity: 0.99;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 139px;
+    margin-bottom: 27px;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.feedback-modal-show {
+    display: block;
+}
+
+.modal-overlay-show {
+    display: block;
+}
+
 /*=================================
             FOOTER
 ==================================*/
@@ -1344,4 +1450,456 @@ footer .documents a:hover {
 footer .copy {
     margin-top: 30px;
     float: right;
+}
+
+/*==================================================================
+                         CATALOG.HTML
+===================================================================*/
+/*=================================
+            BREADCRAMBS
+==================================*/
+.catalog {
+    font-weight: 500;
+    color: #fff;
+}
+
+.catalog .breadcrumbs ul {
+    padding: 0;
+    margin: 20px 0 5px 0;
+}
+
+.catalog .breadcrumbs li {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 17px;
+}
+
+.catalog .breadcrumbs li::after {
+    content: "»";
+    position: absolute;
+    color: #fff;
+    top: 1px;
+    right: 1px;
+}
+
+.catalog .breadcrumbs li:last-child::after {
+    display: none;
+}
+
+.catalog .breadcrumbs li .current {
+    border-bottom: 0;
+}
+
+.catalog .breadcrumbs a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/*=================================
+              HEADER
+==================================*/
+.catalog-header h1 {
+    margin-top: 10px;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+/*=================================
+         CATALOG FILTER 
+==================================*/
+.catalog-filter {
+    margin-bottom: 37px;
+}
+
+.catalog-filter p {
+    font-size: 14px;
+    margin-top: 8px;
+    margin-left: 18px;
+    margin-bottom: 7px;
+}
+
+.catalog-filter .applay {
+    float: left;
+    margin-top: 31px;
+    margin-left: 28px;
+    padding: 8px 28px 8px 28px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+    text-align: center;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.catalog-filter .applay:hover {
+    background-color: rgba(255, 255, 255, 0.99);
+    color: #363636;
+}
+
+.catalog-filter .dropdown-btn {
+    position: relative;
+    color: #fff;
+    padding: 9px 50px 9px 17px;
+    background-color: rgba(248, 247, 244, 0.2);
+    border: 0;
+    outline: none;
+    border-radius: 20px;
+}
+
+.catalog-filter .dropdown-btn::before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 5px;
+    right: 15px;
+    top: 15px;
+    background: url("../img/dropdown-btn-white.png") center center no-repeat;
+}
+
+.catalog-filter .dropdown {
+    margin-right: 16px;
+    height: 71px;
+    float: left;
+    position: relative;
+}
+
+.catalog-filter .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.catalog-filter .dropdown:hover .dropdown-btn {
+    background-color: #fff;
+    color: #343434;
+}
+
+.catalog-filter .dropdown:hover .dropdown-btn::before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 5px;
+    right: 15px;
+    top: 15px;
+    background: url("../img/dropdown-btn.png") center center no-repeat;
+}
+
+.catalog-filter .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 192px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 400;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.catalog-filter .dropdown-content a {
+    display: block;
+    padding: 5px 21px;
+    text-decoration: none;
+    color: #343434;
+}
+
+.catalog-filter .dropdown-content a:hover {
+    color: #fff;
+    background-color: #1e90ff;
+}
+
+.catalog-filter .catalog-range {
+    float: left;
+    height: 71px;
+}
+
+.catalog-filter .catalog-range p {
+    margin-left: 17px;
+}
+
+.catalog-filter .catalog-range .catalog-price-range {
+    height: 36px;
+    background-color: rgba(248, 247, 244, 0.2);
+    border-radius: 15px;
+    -webkit-appearance: none;
+    padding: 0px 15px;
+    margin: 0px 15px 0px 0px;
+    width: 188px;
+}
+
+.catalog-filter .catalog-range .catalog-price-range:focus {
+    outline: none;
+}
+
+.catalog-filter .catalog-range .catalog-price-range::-webkit-slider-runnable-track {
+    width: 148px;
+    height: 4px;
+    cursor: pointer;
+    animation: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #F8F7F4;
+    border-radius: 15px;
+    border: 0px solid #000000;
+}
+
+.catalog-filter .catalog-range .catalog-price-range::-webkit-slider-thumb {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    border: 0px solid #000000;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8.5px;
+}
+
+.catalog-filter .catalog-range .catalog-price-range:focus::-webkit-slider-runnable-track {
+    background: #F8F7F4;
+}
+
+.catalog-fat {
+    float: left;
+    height: 71px;
+}
+
+.catalog-fat .fat-radio {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.catalog-fat .fat-radio:last-child {
+    padding-right: 20px;
+}
+
+.catalog-fat .fat-radio input[type="radio"] {
+    display: none;
+}
+
+.catalog-fat .fat-radio .checkbox-indicator {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    top: -2px;
+    left: 1px;
+}
+
+.catalog-fat .fat-radio input[type="radio"]:checked + .checkbox-indicator::before,
+    .catalog-fat .fat-radio input[type="radio"]:checked + .checkbox-indicator::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.catalog-fat .catalog-fat-radio {
+    background-color: rgba(248, 247, 244, 0.2);
+    border-radius: 15px;
+}
+
+.catalog-filler {
+    float: left;
+    height: 71px;
+}
+
+.catalog-filler .catalog-filler-checkbox {
+    background-color: rgba(248, 247, 244, 0.2);
+    border-radius: 15px;
+}
+
+.catalog-filler .fat-checkbox {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.catalog-filler .fat-checkbox:last-child {
+    padding-right: 20px;
+}
+
+.catalog-filler .fat-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.catalog-filler .fat-checkbox .checkbox-indicator {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    top: -2px;
+    left: 1px;
+}
+
+.catalog-filler .fat-checkbox input[type="checkbox"]:checked + .checkbox-indicator::before,
+    .catalog-filler .fat-checkbox input[type="checkbox"]:checked + .checkbox-indicator::after {
+    content: '\2713';
+    position: absolute;
+    font-weight: 700;
+    top: 3px;
+    left: 3px;
+    width: 14px;
+    height: 14px;
+}
+
+/*=================================
+         CATALOG ITEMS 
+==================================*/
+.catalog main {
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.catalog main:after {
+    content: '';
+    position: absolute;
+    width: 1146px;
+    height: 1px;
+    background-color: #ffffff;
+    opacity: 0.3;
+    bottom: 0;
+}
+
+.catalog .assortiment {
+    border: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.catalog .assortiment-item {
+    background-size: contain;
+    background-position: top center;
+    position: relative;
+    margin-bottom: 10px;
+    height: 405px;
+}
+
+.catalog .assortiment-item p {
+    margin-bottom: 20px;
+}
+
+.catalog .assortiment-item button {
+    display: none;
+    margin: 0 auto;
+    border: 0;
+    outline: none;
+    padding: 5px 27px;
+    border-radius: 15px;
+    box-shadow: 0 1px 2px #ac1000;
+    background-color: #e84d37;
+    background-image: linear-gradient(to top, #e74a35 0%, #f26843 100%);
+    color: #fefefe;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.catalog .assortiment-item::before {
+    display: none;
+}
+
+.catalog .assortiment-item:hover button {
+    display: block;
+}
+
+.catalog .assortiment-item:hover::after {
+    content: '';
+    position: absolute;
+    width: 278px;
+    height: 405px;
+    top: -5px;
+    left: -6px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 4px 5px 5px 4px;
+    background-color: #f8f7f4;
+    opacity: 0.3;
+    z-index: -10;
+}
+
+/*=================================
+            PAGINATION 
+==================================*/
+.catalog-pagination {
+    text-align: right;
+    position: relative;
+}
+
+.catalog-pagination .prev-page {
+    position: absolute;
+    width: 9px;
+    height: 14px;
+    top: 2px;
+    right: 140px;
+    cursor: pointer;
+    opacity: 0.5;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOCAYAAAD9lDaoAAAAcElEQVQoU4XR0Q2AIAyE4f82cBRGcAU3kMlkE2dwEzfAQMAgFu3zl/R6FYOJMTrASQqyTAE7MAHLC3XgAOYHMoF03mgEUpyMvkBGf6CiFdjKlUGS7y+u6z5hG3wI+wpMaJX5gqO3tNCbqHSX4CxpvQD3vEbG6611uwAAAABJRU5ErkJggg==") center center no-repeat;
+}
+
+.catalog-pagination .next-page {
+    position: absolute;
+    width: 9px;
+    height: 14px;
+    top: 2px;
+    right: -20px;
+    cursor: pointer;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAOCAYAAAD9lDaoAAAAh0lEQVQoU4XRbQ3CMBSF4fc4mBMsMAc4GDhACg6oAyxMQqWAgkO6tEu3tFv/3fTJ/RSA7TsQJcUU759s34AP8AXGFkxoAGbg0oPK5Q7hgs7gio7gBnVha2TbAZjy36OVqYAf8JQU9j3V4Fp2Vk/XBKlk2VMXLCjf7Q2kHtYS9UAl0wsIvQP/Aco9T5kRXLkVAAAAAElFTkSuQmCC") center center no-repeat;
+}
+
+.catalog-pagination ul {
+    margin: 0;
+    padding: 0;
+}
+
+.catalog-pagination li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.catalog-pagination li:hover {
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.catalog-pagination .active {
+    color: #000;
+    background: #fff;
+}
+
+.catalog-pagination a {
+    display: block;
+    text-align: center;
+    padding: 4px 8px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 50%;
 }

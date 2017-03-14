@@ -60,18 +60,22 @@
           <div class="main-checkput-modal">
               <table>
                   <tr>
+                      <td><button type="button"></button></td>
+                      <td><img src="../img/checkput-modal-bg_01.png" alt="icecream"></td>
                       <td>Пломбир с апельсиновым джемом</td>
                       <td>1,5 кг <span>х 200 руб.</span></td>
                       <td>300 руб.</td>
                   </tr>
                   <tr>
+                      <td><button type="button"></button></td>
+                      <td><img src="../img/checkput-modal-bg_02.png" alt="icecream"></td>
                       <td>Клубничный пломбир с присыпкой из белого шоколада</td>
                       <td>1,5 кг <span>х 300 руб.</span></td>
                       <td>450 руб.</td>
                   </tr>
               </table>
               <p>Итого: 750 руб.</p>
-              <button type="submit">Оформить заказ</button>
+              <button class="checkout" type="submit">Оформить заказ</button>
           </div>
       </div>
       <div class="main-shedule">
@@ -216,9 +220,22 @@
       <p>
         (с 10 до 20 ежедневно)
       </p>
-      <a href="#">Форма обратной связи</a>
+      <a class="feedback" href="#">Форма обратной связи</a>
     </div>
   </section>
+
+<div class="feedback-modal cf">
+  <h5>Мы обязательно вам ответим!</h5>
+  <button class="feedback-modal-close" type="button" title="Закрыть">Закрыть</button>
+  <form action="#" method="post">
+    <input class="feedback-modal-name" type="text" placeholder="Как вас зовут?">
+    <input type="text" placeholder="Ваша почта для ответа?">
+    <textarea cols="59" rows="10" placeholder="Напишите что-нибудь..."></textarea>
+    <input type="submit" value="Отправить">
+  </form>
+</div>
+
+<div class="modal-overlay"></div>
 
 
   <footer class="container">
@@ -237,7 +254,7 @@
       </ul>
     </div>
     <div class="copy">
-      <img src="../img/logo.png" alt="copy">
+      <a href="index.html"><img src="../img/logo.png" alt="copy"></a>
     </div>
   </footer>
   
