@@ -1160,7 +1160,6 @@ body {
     margin: 0 auto;
     height: 429px;
     width: 1200px;
-    background: url("../img/map.jpg") center center no-repeat;
 }
 
 .map::before {
@@ -1174,7 +1173,9 @@ body {
 }
 
 .map .contacts {
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 302px;
     background-color: rgba(255, 255, 255, 0.98);
     border-radius: 15px;
